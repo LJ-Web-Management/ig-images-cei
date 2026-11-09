@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root { --navy:#022350; --gold:#CC9628; --teal:#036F86; --cream:#FAF8F3; --line:#E4DED2; --ink:#1D2433; --muted:#566074; --tealtint:#E3F1F4; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1350px; overflow:hidden; font-family:'Inter', sans-serif; color:var(--ink); }
+  .card { position:relative; width:1080px; height:1350px; background:linear-gradient(#fff 0, var(--cream) 100%);
+    background-image:
+      linear-gradient(rgba(2,35,80,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(2,35,80,0.045) 1px, transparent 1px),
+      linear-gradient(#fff 0, var(--cream) 100%);
+    background-size:54px 54px, 54px 54px, 100% 100%; }
+  .content { position:absolute; inset:0; padding:76px 80px 64px; display:flex; flex-direction:column; }
+  .eyebrow { font-family:'DejaVu Sans Mono', monospace; font-weight:700; font-size:24px; letter-spacing:4px; color:var(--teal); display:flex; align-items:center; gap:14px; }
+  .eyebrow::before { content:""; width:16px; height:16px; background:var(--gold); }
+  h1 { font-family:'Bitstream Charter','Lora',Georgia,serif; font-weight:700; color:var(--navy); font-size:128px; line-height:1; margin-top:26px; letter-spacing:-1px; }
+  .sub { font-family:'Bitstream Charter','Lora',Georgia,serif; font-style:italic; color:var(--teal); font-size:50px; line-height:1.15; margin-top:14px; }
+  .lede { font-size:31px; line-height:1.45; margin-top:26px; color:#454E62; max-width:900px; }
+  .row { display:flex; gap:28px; margin-top:40px; }
+  .box { background:#fff; border:3px solid var(--navy); border-radius:22px; padding:30px 34px; }
+  .box.gold { box-shadow:10px 10px 0 var(--gold); }
+  .box.teal { box-shadow:10px 10px 0 var(--teal); }
+  .box.navy { box-shadow:10px 10px 0 var(--navy); }
+  .box h2 { font-family:'Bitstream Charter','Lora',Georgia,serif; font-weight:700; font-size:34px; color:var(--navy); margin-bottom:16px; }
+  .stats { flex:1; }
+  .stat { display:flex; justify-content:space-between; align-items:baseline; font-size:27px; padding:9px 0; border-bottom:1px solid var(--line); }
+  .stat:last-child { border-bottom:none; }
+  .stat span:first-child { color:var(--muted); }
+  .stat b { color:var(--ink); }
+  ul { list-style:none; }
+  li { font-size:28px; line-height:1.4; padding-left:36px; position:relative; margin-bottom:10px; }
+  li::before { content:""; position:absolute; left:0; top:14px; width:12px; height:12px; border-radius:50%; background:var(--teal); }
+  .footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; border-top:2px solid var(--line); padding-top:28px; }
+  .wordmark { font-family:'Bitstream Charter','Lora',Georgia,serif; color:var(--navy); line-height:1; }
+  .wordmark .a { white-space:nowrap; font-size:34px; font-weight:700; letter-spacing:0.5px; }
+  .wordmark .b { font-size:17px; letter-spacing:9px; margin-top:6px; display:flex; align-items:center; gap:12px; color:var(--navy); }
+  .wordmark .b::before, .wordmark .b::after { content:""; height:2px; width:44px; background:var(--teal); }
+  .cta { background:var(--gold); color:var(--navy); font-weight:700; font-size:24px; border:3px solid var(--navy); border-radius:16px; padding:16px 24px; white-space:nowrap; }
+  .src { font-size:17px; color:#8a92a3; margin-top:14px; }
+</style></head>
+<body><div class="card"><div class="content">
+  <div class="eyebrow">CAREER SPOTLIGHT</div>
+  <h1>{{career}}</h1>
+  <div class="sub">{{tagline}}</div>
+  <p class="lede">{{summary}}</p>
+
+  <div class="row">
+    <div class="box gold stats">
+      <h2>By the numbers</h2>
+      <div class="stat"><span>Median pay</span><b>{{median_pay}}</b></div>
+      <div class="stat"><span>{{growth_label}}</span><b>{{growth}}</b></div>
+      <div class="stat"><span>Time to train</span><b>{{time_to_train}}</b></div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:34px;">
+    <div class="box teal" style="flex:1;">
+      <h2>What the job looks like</h2>
+      <ul>{{bullets}}</ul>
+    </div>
+  </div>
+  <div class="src">{{source_note}}</div>
+
+  <div class="footer">
+    <div class="wordmark"><div class="a">CAREER EDUCATION</div><div class="b">INSTITUTE</div></div>
+    <div class="cta">Free Career Match Quiz · link in bio</div>
+  </div>
+</div></div></body></html>
